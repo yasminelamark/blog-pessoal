@@ -6,7 +6,7 @@ export class AppService {
     return 'Hello World!';
   }
 
-getTurma(): string {
-  return 'A turma JavaScript 04 é top!';
-}
+  getTurma(): string {
+    return 'A turma JavaScript 04 é top!';
+  }
 }
