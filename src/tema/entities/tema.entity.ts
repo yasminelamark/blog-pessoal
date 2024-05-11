@@ -1,22 +1,22 @@
-/* eslint-disable prettier/prettier */
-import { IsNotEmpty } from 'class-validator';
-import {
-  Column,
-  Entity,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
-import { Postagem } from '../../postagem/entities/postagem.entity';
+import { IsNotEmpty } from "class-validator";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Postagem } from "../../postagem/entities/postagem.entity";
+import { ApiProperty } from "@nestjs/swagger";
 
-@Entity({ name: 'tb_temas' })
+@Entity({name: "tb_temas"})
 export class Tema {
-  @PrimaryGeneratedColumn() // Chave primárie e Auto_Increment
-  id: number;
 
-  @IsNotEmpty()
-  @Column({ length: 255, nullable: false })
-  descricao: string;
+    @PrimaryGeneratedColumn()    
+    @ApiProperty()
+    id: number
 
-  @OneToMany(() => Postagem, (postagem) => postagem.tema)
+    @IsNotEmpty()
+    @Column({length: 255, nullable: false})
+    @ApiProperty()
+    descricao: string
+
+    @OneToMany(() => Postagem, (postagem) => postagem.tema)
+    @ApiProperty()
     postagem: Postagem[]
+    
 }
