@@ -16,7 +16,7 @@ import { Tema } from '../entities/tema.entity';
 import { TemaService } from '../services/tema.service';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Usuario')
+@ApiTags('Tema')
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
 @Controller('/temas')
